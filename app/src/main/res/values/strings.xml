@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Treasure Hackathon</string>
+    <string name="logo">Logo</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="lihat_password">See password</string>
+    <string name="login">Login</string>
+    <string name="login_with">Login With</string>
+    <string name="google">Google</string>
+    <string name="signup">Sign Up</string>
+    <string name="login_to_continue">Login to Continue</string>
+    <string name="dont_have_account_yet">Dont have account yet?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_not_valid">Email not valid</string>
+    <string name="pass_not_valid">Password must be at least 6 characters</string>
+</resources>
