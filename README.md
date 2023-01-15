@@ -9,6 +9,7 @@
 # APP
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We developed our application in 2 platforms which is Mobile and Web. You can see our code in each branch:
-1.
-2.
-3.
+
+1. [Android-Development Branch](https://github.com/Monica255/Treasure-Hackathon/tree/Android-Development)
+2. [Front-End Branch](https://github.com/Monica255/Treasure-Hackathon/tree/Front-End)
+3. [Back-End Branch](https://github.com/Monica255/Treasure-Hackathon/tree/Back-End)
