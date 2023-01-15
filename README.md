@@ -9,4 +9,12 @@ amount of leftovers foods in a restaurants, store etc.
 Data Source used for this project is from this [link][link]
 
 ## Interfaces
+![login](https://github.com/Monica255/Treasure-Hackathon/blob/master/UI/1login.png)
+![contributor](https://github.com/Monica255/Treasure-Hackathon/blob/master/UI/contributor.png)
+![user](https://github.com/Monica255/Treasure-Hackathon/blob/master/UI/user.png)
+![non_profit organization](https://github.com/Monica255/Treasure-Hackathon/blob/master/UI/npo.png)
+
+
+
+
 
