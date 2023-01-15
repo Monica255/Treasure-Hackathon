@@ -1,25 +1,25 @@
 # Basic Workflow
-1. seller melakukan publikasi produk yang akan di perlihatkan oleh contributor(donatur) melalui METHOD POST:"/sellers/product/:sellerId"
-2. produk tersebut dapat diakses oleh contributor(donatur) melalui METHOD: GET "/contributor/products". hal ini karena contributor(donatur) akan melakukan penebusan pada produk yang dipublikasikan seller
-3. contributor(donatur) melakukan penebusan melalui METHOD: POST "/contributor/purchase/:contributorId"
-4. setelah ditebus produk yang ditebus akan masuk dalam endpoint  METHOD: GET "/users/leftoffers" dimana endpoint ini bisa dilihat oleh pihak contributor(yayasan atau user)
-5. pihak contributor(yayasan atau user) dapat melakukan claim leftoffers yang tersedia melalui endpoint METHOD: POST "/users/claim/:contributorId"
+1. The seller publishes the product to be seen by contributors (donors) via the POST METHOD:"/sellers/product/:sellerId"
+2. The product can be accessed by contributors (donors) via METHOD: GET "/contributor/products". this is because the contributor (donor) will make redemption on the product published by the seller
+3. The contributor (donor) makes redemption via METHOD: POST "/contributor/purchase/:contributorId"
+4. After being redeemed, the redeemed product will be included in the METHOD endpoint: GET "/users/leftoffers" where this endpoint can be seen by contributors (foundations or users)
+5. Contributors (foundations or users) can claim leftoffers available through the METHOD endpoint: POST "/users/claim/:contributorId"
 
-# WorkFlow Details
-### seller router
-- method POST pada endpoint "/sellers/product/:sellerId" dilakukan untuk posting produk makanan, yang nantinya akan di tebus oleh donatur. tentunya harus memiliki id_seller yang tepat untuk melakukan posting data, jika id_seller tidak tervalidasi, maka post data tidak dapat dioperasikan. Parameter yang dibutuhkan dalam POST data (name:string, qty:number, desc:string, prize:number)
-- method GET pada endpoint "/sellers" digunakan untuk melihat list semua seller dalam sistem.
-- method GET pada endpoint "/sellers/product/:sellerId digunakan untuk melihat list produk dalam suatu seller
-- method GET pada endpoint "/sellers/history/:sellerId" digunakan untuk melihat riwayat penebusan dan claimer dalam suatu seller
-- method GET pada endpoint "/sellers/leftoffer/:sellerId" digunakan untuk melihat product yang telah ditebus oleh contributor(donatur) tapi belum di claim oleh contributor(user/yayasan)
-- method DELETE pada endpoint "/seller/product/:sellerId/:productId" digunakan untuk menghapus sebuah produk dari seller apapun resikonya.
+# Workflow Details
+### vending routers
+- The POST method on the "/sellers/product/:sellerId" endpoint is used to post food products, which will later be redeemed by donors. of course, you must have the right id_seller to post data, if id_seller is not validated, then post data cannot be operated. Parameters required in POST data (name:string, qty:number, desc:string, prize:number)
+- The GET method on the "/sellers" endpoint is used to see a list of all sellers in the system.
+- The GET method on the "/sellers/product/:sellerId" endpoint is used to view a list of products in a seller
+- The GET method on the endpoint "/sellers/history/:sellerId" is used to view the redemption and claimer history in a seller
+- The GET method on the endpoint "/sellers/leftoffer/:sellerId" is used to view products that have been redeemed by contributors (donors) but have not been claimed by contributors (users/foundations)
+- The DELETE method on the endpoint "/seller/product/:sellerId/:productId" is used to delete a product from the seller regardless of the risk.
 
 ### contributor router
-- method GET pada "/contributor/products" digunakan untuk melihat semua makanan yang dijual oleh pihak seller
-- method GET pada "/contributor/history/:contributorId" dignunakan untuk melihat riwayat transaksi dari kontributor 
-- method POST pada "/contributor/signin" digunakan untuk melakukan sign-in. jika valid maka server akan meresponse dalam bentuk JSON dengan isi (contributor_id:string, username:string, email:string, role:string). parameter yang dibutuhkan dalam POST data: (email:string, password:string)
-- method Post pada "/contributor/purchase/:contributorId" digunakan untuk melakukan penebusan product makanan yang dijual oleh pihak seller. Parameter yang dibutuhkan dalam POST data: (qty:number, prize:number, id_seller:string, id_product:string). Hal yang perlu diperhatikan jika contributorId tidak valid (dimana id pengguna yang ingin melakukan penebusan bukan termasuk role donatur) maka tidak bisa melakukan operasi ini
+- The GET method on "/contributor/products" is used to see all the food sold by the seller
+- GET method on "/contributor/history/:contributorId" is used to view the transaction history of contributors
+- The POST method in "/contributor/signin" is used to sign-in. if valid then the server will respond in JSON form with contents (contributor_id:string, username:string, email:string, role:string). parameters needed in POST data: (email:string, password:string)
+- The Post method on "/contributor/purchase/:contributorId" is used to redeem food products sold by the seller. Parameters needed in POST data: (qty:number, prize:number, id_seller:string, id_product:string). Things to note if the contributorId is invalid (where the id of the user who wants to make a redemption does not include the donor role) then this operation cannot be performed
 
-### users router
-- method GET pada "/users/leftoffers" digunakan untuk melihat semua list makanan dari pihak seller yang telah ditebus oleh donatur.
-- method POST pada "/users/claim/:contributorId" digunakan untuk melakukan claim makanan leftovers dari seller yang sudah ditebus oleh donatur. Parameter yang dibutuhkan dalam POST data: (id_seller:string, id_product:string) hal ini karena untuk menentukan leftover apa yang akan di claim oleh pengguna.
+### user router
+- The GET method in "/users/leftoffers" is used to view all food lists from sellers that have been redeemed by donors.
+- The POST method on "/users/claim/:contributorId" is used to claim leftover food from sellers who have been redeemed by donors. Parameters needed in the POST data: (id_seller:string, id_product:string) this is to determine what remainder will be claimed by the user.
