@@ -1,0 +1,23 @@
+<div class="side-nav-content">
+    <div class="nav-list" [ngClass]="{'nav-list-open': sideNavStatus}">
+        <li class="nav-list-item" routerLink="/home" routerLinkActive="active-link">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </li>
+
+        <li class="nav-list-item" routerLink="/history" routerLinkActive="active-link">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>History</span>
+        </li>
+
+        <li class="nav-list-item" routerLink="/product" routerLinkActive="active-link">
+            <i class="fa-solid fa-box"></i>
+            <span>Product</span>
+        </li>
+
+        <li class="nav-list-item" routerLink="/leftovers" routerLinkActive="active-link">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>LeftOvers</span>
+        </li>
+    </div>
+</div>

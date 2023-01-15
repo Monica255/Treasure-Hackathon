@@ -1,0 +1,35 @@
+<div class="container-table">
+    <table class="content-table" id="example">
+        <thead>
+            <tr>
+                <th title="Field #1">No</th>
+                <th title="Field #2">Id Transaction</th>
+                <th title="Field #3">Id_Product</th>
+                <th title="Field #4">Date & Order Time</th>
+                <th title="Field #5">Description</th>
+                <th title="Field #6">Id Seller</th>
+                <th title="Field #7">Amount Food</th>
+                <th title="Field #8">Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userList;let i=index">
+                <td>{{ i+1 }}</td>
+                <td>{{ user.id_transaction }}</td>
+                <td>{{ user.id_product }}</td>
+                <td>{{ user.timestamp }}</td>
+                <td>{{ user.desc }}</td>
+                <td>{{ user.id_seller }}</td>
+                <td>{{ user.qty }}</td>
+                <td>Rp.{{ user.price }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script src="./history.js"></script>

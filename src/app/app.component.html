@@ -1,0 +1,65 @@
+<div class="container-fluid g-0">
+    <app-header (sideNavToggled)="sideNavStatus = $event;"></app-header>
+
+    <main>
+        <app-sidenav [sideNavStatus]="sideNavStatus" 
+        [ngClass]="{'app-side-nav-open': sideNavStatus}"></app-sidenav>
+
+        <div class="display-area p-3" 
+        [ngClass]="{'display-area-shrink': sideNavStatus}">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+  
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel1">Enter Post Information</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="postForm">
+          <div class="row">
+              <div class="col form-heading">
+                  <h6 class="text-secondary fst-italic">Description of Product</h6>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+                <label for="info" class="form-label">Food Name :</label>
+                <input type="text" class="form-control" id="info" placeholder="example : French Fries" formControlName="info">
+            </div>
+        </div>
+
+          <div class="row">
+              <div class="col">
+                  <label for="title" class="form-label">Description :</label>
+                  <input type="text" class="form-control" id="title" placeholder="example : Flour, Potato" formControlName="title">
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col">
+                  <label for="datepicker" class="form-label">Amount Food :</label>
+                  <input type="number" class="form-control" id="datepicker" formControlName="date" placeholder="example : 2">
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col"> 
+                  <label for="prices" class="form-label">Price :</label>
+                  <input type="number" class="form-control" id="prices" placeholder="example : $10" formControlName="price">
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Post</button>
+      </div>
+    </div>
+  </div>
+</div>

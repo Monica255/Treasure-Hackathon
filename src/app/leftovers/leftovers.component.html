@@ -1,0 +1,33 @@
+<div class="container-table">
+    <table class="content-table" id="example">
+        <thead>
+            <tr>
+                <th title="Field #1">No</th>
+                <th title="Field #2">Id Product</th>
+                <th title="Field #3">Package</th>
+                <th title="Field #4">Description Food</th>
+                <th title="Field #5">Id_Seller</th>
+                <th title="Field #6">Food Amounts</th>
+                <th title="Field #7">Total Price</th>
+                <th title="Field #8"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of oversList;let i=index">
+                <td>{{ i+1 }}</td>
+                <td>{{ user.id_product }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.desc }}</td>
+                <td>{{ user.id_seller }}</td>
+                <td>{{ user.qty }}</td>
+                <td>{{ user.prize }}</td>
+                <td class="menu">
+                    <button type="button" class="btn btn-outline-danger btn-lg tombol">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

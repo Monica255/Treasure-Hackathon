@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark px-2">
+
+    <div class="side-nav-button p-2 me-3 text-light" (click)="SideNavToggle()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <a class="navbar-brand px-4 r-5" href="#">Treasure Hackathon</a>
+
+    <div class="navbar-collapse">
+        
+        <form class="d-flex me-3">
+            <input class="form-control me-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+
+        <div class="profile-logo dropdown">
+            <button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">
+                Kenwi Konghardijunanto
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a href="#" class="dropdown-item">Sign Up</a></li>
+                <li><a href="#" class="dropdown-item">Log In</a></li>
+                <li><a href="#" class="dropdown-item">Your Profile</a></li>
+                <li><a href="#" class="dropdown-item">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
