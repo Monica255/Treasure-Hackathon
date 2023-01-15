@@ -6,7 +6,7 @@ amount of leftovers foods in a restaurants, store etc. You can claim and help di
 
 ## Data Source
 [link]:https://github.com/Barbarpotato/Treasure-Hacktahons-BackendAPI
-Data Source used for this project is from this [link][link]
+Data Source used in this project is from this [link][link]
 
 ## Applied Concepts
 - Clean Architecture
